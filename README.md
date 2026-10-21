@@ -29,6 +29,25 @@ all generated from the same source of truth and checked before delivery.
 
 ![Workflow](https://img.shields.io/badge/workflow-extract%20%E2%86%92%20understand%20%E2%86%92%20translate%20%E2%86%92%20build%20%E2%86%92%20QA-6b7280)
 
+## How it works
+
+```mermaid
+flowchart LR
+  A[Paper PDF] --> B[extract_pdf.py]
+  B --> C[paper.json + figs/]
+  C --> D[translation.json]
+  C --> E[figures.json]
+  C --> F[methods.json]
+  D --> G[job.en2cn.html]
+  E --> H[job.fig.html]
+  F --> I[job.method.html]
+  C --> J[job.md / weixin.md / talk.md]
+  G --> K[check_outputs.py]
+  H --> K
+  I --> K
+  J --> K
+```
+
 ## Features
 
 - **Faithful, paragraph-aligned translation.** Every English paragraph keeps its own ID and its own
