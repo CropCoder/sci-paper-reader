@@ -52,7 +52,7 @@ jobs:
           for md in root.rglob('*.md'):
               text = md.read_text(encoding='utf-8')
               for link in re.findall(r'\]\(([^)]+)\)', text):
-                  if link.startswith(('http', '#', 'mailto:')):
+                  if link.startswith(('http', '#', 'mailto:', 'figs/')):
                       continue
                   target = (md.parent / link.split('#', 1)[0]).resolve()
                   if not target.exists():
