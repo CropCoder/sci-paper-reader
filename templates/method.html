@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__PAGE_TITLE__</title>
+<style>
+/*__THEME__*/
+.method-toolbar {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  margin: 0 0 18px;
+}
+.method-toolbar .filter-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-right: 4px; }
+.method-filter {
+  border: 1px solid var(--line); background: var(--card); color: var(--muted);
+  padding: 5px 11px; border-radius: 999px; font-size: 12px; cursor: pointer;
+}
+.method-filter:hover { color: var(--ink); border-color: var(--line-strong); }
+.method-filter[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.method-card.is-hidden { display: none; }
+.cite-box .cite-link { display: inline-flex; align-items: center; gap: 5px; }
+@media print {
+  .method-toolbar, .sidebar, .app-header { display: none; }
+}
+</style>
+</head>
+<body class="has-sidebar" data-page="method">
+<div class="progress" id="progress"></div>
+
+<header class="app-header">
+  <div class="header-inner">
+  <button class="btn ghost mobile-toc-toggle" id="tocToggle" aria-label="目录">☰</button>
+  <div class="brand">
+    <div class="brand-mark">⚙</div>
+    <div class="brand-text">
+      <div class="brand-kicker">Paper Reader · 方法拆解</div>
+      <div class="brand-title" id="topTitle">__PAPER_TITLE__</div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button class="btn ghost" id="themeBtn" title="切换深色/浅色">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.8 4.8l1.7 1.7M17.5 17.5l1.7 1.7M2 12h2.4M19.6 12H22M4.8 19.2l1.7-1.7M17.5 6.5l1.7-1.7"/></svg>
+    </button>
+    <button class="btn" id="printBtn" title="打印 / 导出 PDF">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 9V3h10v6M7 18H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v7H7z"/></svg>
+      <span class="label">打印</span>
+    </button>
+  </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-kicker">方法目录 · Methods</div>
+    <nav class="toc" id="toc"></nav>
+    <div class="side-block">
+      <h3>技术路线</h3>
+      <div class="side-hint" id="routeHint"></div>
+    </div>
+    <div class="side-footer" id="sideMeta"></div>
+  </aside>
+
+  <main class="main">
+    <div class="content-width">
+      <div class="site-nav-wrap"><div class="site-nav" id="siteNav"></div></div>
+      <div id="methodContent"></div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DATA = __DATA__;
+/*__NAV__*/
+/*__SCRIPT__*/
+</script>
+</body>
+</html>

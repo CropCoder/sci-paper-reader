@@ -1,0 +1,15 @@
+{
+ "paper_id": "test-paper",
+ "title_zh": "测试论文",
+ "short_title": "测试短标题",
+ "one_liner": "这是一句话测试结论。",
+ "overview": {
+  "lead": "这是一段图组总览。",
+  "logic_summary": "这是一段图与图之间的逻辑说明。",
+  "flow": [{"label": "Fig.1", "title": "测试图", "desc": "测试图的角色。"}],
+  "note": "测试阅读提示。"
+ },
+ "figures": [
+  {"id": "fig1", "short": "测试图", "one_line": "测试图的一句话结论。", "legend_zh": "测试图例中译。", "what": "图中看到什么。", "meaning": "说明了什么。", "conclusion": "结论是什么。", "panels": [{"label": "A", "text": "面板 A 的说明。"}], "caveats": ["这是一条注意事项。"], "connection": "与前后图的关系。", "tags": ["测试"]}
+ ]
+}

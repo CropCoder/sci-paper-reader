@@ -1,0 +1,10 @@
+{
+ "paper_id": "test-paper",
+ "title_zh": "测试论文",
+ "short_title": "测试短标题",
+ "one_liner": "这是一句话测试结论。",
+ "sections": [
+  {"id": "s1", "title_zh": "摘要", "paras": {"p1": "这是一段测试摘要译文。"}},
+  {"id": "s2", "title_zh": "引言", "paras": {"p2": "这是一段测试引言译文。"}}
+ ]
+}

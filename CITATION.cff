@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this skill in academic work, please cite it as below."
+title: "Sci Paper Reader: a research-paper interpretation skill"
+abstract: "A portable agent skill that turns a research-paper PDF into a bilingual paragraph reader, figure gallery, methods explainer, WeChat article and group-meeting talk."
+authors:
+  - family-names: "CropCoder"
+    name: "CropCoder"
+version: 1.1.0
+date-released: 2026-10-21
+license: MIT
+repository-code: "https://github.com/CropCoder/sci-paper-reader"
+keywords:
+  - research paper
+  - PDF
+  - translation
+  - figure interpretation
+  - science communication
+  - agent skill

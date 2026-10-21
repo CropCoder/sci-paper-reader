@@ -1,0 +1,49 @@
+name: Bug report
+description: Report a broken extraction, page build, or validation result.
+title: "[bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please do not upload a full copyrighted PDF unless you have the right to share it.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `python3 scripts/extract_pdf.py ...`
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: v1.1.0 or commit SHA
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - PDF extraction
+        - Bilingual reader
+        - Figure gallery
+        - Methods page
+        - WeChat article
+        - Talk script
+        - Validation
+        - Other
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Paste tracebacks or `check_outputs.py` output.
+      render: shell

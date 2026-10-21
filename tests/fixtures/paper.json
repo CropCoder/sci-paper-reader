@@ -1,0 +1,22 @@
+{
+ "source": {
+  "pdf": "/tmp/test-paper.pdf",
+  "pages": 3,
+  "title": "A Test Paper for Sci Paper Reader",
+  "authors": "Ada Example, Ben Example",
+  "journal": "Journal of Examples",
+  "year": "2026",
+  "doi": "10.0000/example.2026.001"
+ },
+ "abstract": "This is a test abstract.",
+ "sections": [
+  {"id": "s1", "title": "Abstract", "role": "abstract", "paras": [{"id": "p1", "page": 1, "en": "This is a test abstract."}]},
+  {"id": "s2", "title": "Introduction", "role": "introduction", "paras": [{"id": "p2", "page": 1, "en": "This is a test introduction paragraph."}]}
+ ],
+ "figures": [
+  {"id": "fig1", "label": "Figure 1", "page": 2, "caption_en": "Figure 1 | A test figure caption.", "image": "figs/fig1.png", "confidence": "high"}
+ ],
+ "tables": [],
+ "references": "",
+ "extraction": {"warnings": []}
+}

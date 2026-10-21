@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Compile Python
+        run: python -m compileall -q scripts tests
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Check browser scripts
+        run: |
+          node --check templates/en2cn.js
+          node --check templates/fig.js
+          node --check templates/method.js
+          node --check templates/site-nav.js
+
+      - name: Check markdown links to local files
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          root = Path('.')
+          missing = []
+          for md in root.rglob('*.md'):
+              text = md.read_text(encoding='utf-8')
+              for link in re.findall(r'\]\(([^)]+)\)', text):
+                  if link.startswith(('http', '#', 'mailto:')):
+                      continue
+                  target = (md.parent / link.split('#', 1)[0]).resolve()
+                  if not target.exists():
+                      missing.append(f'{md}: {link}')
+          if missing:
+              raise SystemExit('\n'.join(missing))
+          print('local markdown links OK')
+          PY

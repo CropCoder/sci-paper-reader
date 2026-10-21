@@ -1,0 +1,12 @@
+{
+ "paper_id": "test-paper",
+ "title_zh": "测试论文",
+ "short_title": "测试短标题",
+ "one_liner": "这是一句话测试结论。",
+ "overview": "这是一段方法总览。",
+ "route": [{"step": "01", "name": "测试方法", "desc": "测试方法说明。"}],
+ "methods": [
+  {"id": "m1", "name": "测试方法", "name_en": "Test method", "category": "统计", "what": "原理说明。", "how": "本文怎么用。", "params": "关键参数。", "interpretation": "方法解读。", "used_in": ["Fig. 1"], "citation": {"text": "Example A. Test reference. J Test. 2026.", "doi": "10.0000/example.2026.001", "url": "https://doi.org/10.0000/example.2026.001"}}
+ ],
+ "notes": ["测试注意事项。"]
+}
