@@ -488,14 +488,14 @@ body.filter-bookmarks .para:not(.is-marked) { display: none; }
   scrollbar-width: thin;
 }
 .logic-step {
-  flex: 0 0 210px; position: relative;
+  flex: 0 0 205px; position: relative;
   padding: 14px 16px;
   background: var(--card); border: 1px solid var(--line); border-radius: 12px;
   box-shadow: var(--shadow-sm);
 }
-.logic-step + .logic-step { margin-left: 26px; }
+.logic-step + .logic-step { margin-left: 16px; }
 .logic-step + .logic-step::before {
-  content: "→"; position: absolute; left: -21px; top: 50%; transform: translateY(-50%);
+  content: "→"; position: absolute; left: -14px; top: 50%; transform: translateY(-50%);
   color: var(--accent); font-size: 16px;
 }
 .logic-step .l-tag { font-family: var(--mono); font-size: 10.5px; color: var(--accent-ink); letter-spacing: .06em; }
